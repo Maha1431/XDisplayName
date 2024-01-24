@@ -14,8 +14,8 @@ function Display() {
     setLastname(e.target.value);
    
   };
-  const handlesubmit = () => {
-    // e.preventDefault();
+  const handlesubmit = (e) => {
+    e.preventDefault();
     if(firstname.trim() !== '' && lastname.trim() !== '')
     {
     setFullname(`${firstname} ${lastname}`);
@@ -25,14 +25,14 @@ function Display() {
   return (
     <div>
       <h1>Full Name Display</h1>
-      <form action="/action_page.php">
-        <label>FirstName:</label>
+      <form  onSubmit={handlesubmit}>
+        <label>First Name:</label>
         <input type="text" value={firstname} onChange={handleFname} required />
         <br />
-        <label>LastName:</label>
+        <label>Last Name:</label>
         <input type="text" value={lastname} onChange={handleLname} required />
         <br />
-        <button onClick={handlesubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {fullname && <p>Full Name : {fullname}</p>}
     </div>
