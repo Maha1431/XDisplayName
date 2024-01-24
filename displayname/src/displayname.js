@@ -34,7 +34,7 @@ function Display() {
         <br />
         <button type="submit">Submit</button>
       </form>
-      {fullname && <p>Full Name : {fullname}</p>}
+      {fullname && <p>Full Name: {fullname}</p>}
     </div>
   );
 }
